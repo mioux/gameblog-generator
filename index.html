@@ -1,0 +1,226 @@
+
+<!doctype html>
+<head>
+<title>Gameblog Generator</title>
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="icon" href="images/favicon.png" type="image/png" />
+<meta name="description" content="Gameblog Generator." />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+body {
+	background: #F4F1EF;
+	color: #3b5998;
+	font-family: Arial, Helvetica, sans-serif;	font-size: 2em;
+	font-weight: bold;
+}
+#container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 480px;
+	height: 280px;
+}
+#radius {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+#title {
+	background: white;
+	width: 470px;
+	color: black;
+	letter-spacing: -1px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 32px;
+}
+#com {
+	background: white;
+	width: 480px;
+	color: #464646;
+	font-size: 15px;
+	letter-spacing: 0;
+	line-height: 18px;
+	font-weight: bold;
+	padding-left : 10px;
+	padding-top: 4px;
+	height: 25px;
+}
+#author {
+	background: white;
+	width: 480px;
+	height : 41px;
+	font-size: 11px !important;
+	color: #969696;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+#author a {
+	font-size: 11px !important;
+	color : #969696;
+	font-weight: bold;
+	text-decoration : none;
+}
+#tweet {
+	width: 480px;
+	height : 41px;
+	padding-left: 0px;
+	padding-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+p1 = new Array(
+"Accro à Call Of Duty, il" ,
+"Joueur de GTA, il" ,
+"Fan de Call Of Duty, elle" ,
+"Une joueuse de GTA" ,
+"Nu, il" ,
+"Nue, elle" ,
+"Un gamer travesti" ,
+"Travestie et fan de jeu de rôle, elle" ,
+"Un fan de Counter Strike" ,
+"Joueur et homosexuel, il" ,
+"Accro à Counter Strike, elle" ,
+"Après 72h sur World of Warcraft, il" ,
+"Joueur de Pokemon, il" ,
+"Joueuse de Pokemon, elle" ,
+"Un joueur japonais" ,
+"Une joueuse japonaise" ,
+"Une chanteuse japonaise" ,
+"Une joueuse de 54 ans" ,
+"Un adolescent fan de Battlefield",
+"Un vendeur de Micromania",
+"Un ex-employé de THQ",
+"Un membre du 15-18",
+"Un fanatique de League of Legends",
+"Un Coréen",
+"Un fou",
+"Une folle"
+);
+p2 = new Array(
+"fait l'amour devant" ,
+"se masturbe devant" ,
+"fait exploser" ,
+"attaque" ,
+"tente de faire l'amour avec" ,
+"essaye de vendre" ,
+"veut acheter" ,
+"tue" ,
+"viole" ,
+"assassine" ,
+"espionne" ,
+"lance du caca sur" ,
+"se suicide devant" ,
+"mange un iPhone devant" ,
+"vend de la drogue pour" ,
+"viole son fils avec" ,
+"tue sa soeur devant" ,
+"frappe un chat devant",
+"mange",
+"dégomme",
+"mitraille",
+"tire sur",
+"lance des chiots sur",
+"se rase le crâne devant"
+); 
+p3 = new Array(
+"un employé d'Apple" ,
+"Justin Bieber" ,
+"le président de Microsoft" ,
+"le président d'Apple" ,
+"le président de Sony" ,
+"le président de Nintendo" ,
+"une actrice porno fan de jeux vidéo" ,
+"Katsuni" ,
+"un chinois" ,
+"sa mère" ,
+"son père" ,
+"un musulman" ,
+"un homosexuel" ,
+"une lesbienne" ,
+"toute sa famille" ,
+"des fans de Naruto" ,
+"son professeur",
+"un journaliste blasé",
+"Trunks de Gamekult",
+"un membre de famille de France",
+"une prostituée ukrainienne",
+"un présentateur de France 2",
+"un homme",
+"une femme",
+"une figurine Final Fantasy",
+"Morsay",
+"un aveugle",
+"Éric Viennot",
+"son ex"
+); 
+
+p4 = new Array(
+" en hurlant" ,
+" tout en l'insultant" ,
+" ?" ,
+" !" ,
+" !!",
+" !!!" ,
+" ?!" ,
+" grâce à internet" ,
+" et crée le buzz",
+"...",
+" avec passion",
+" à cause de la presse papier",
+" avec violence",
+" dans une boutique Game" ,
+" dans un cyber café",
+" dans un Apple Store",
+" en chantant",
+" en rigolant",
+" avec le sourire",
+" pour imiter son héro de jeux vidéo préféré",
+" à Isart Digital",
+" pour déconner",
+" en mangeant une banane"
+);
+
+p5 = new Array(
+"Wow !" ,
+"Oh putain !" ,
+"Ce qu'on en pense" ,
+"Vive la france..." ,
+"On en parle sans langue de bois !",
+"Un phénomène sur Twitter",
+"Un phénomène sur Facebook",
+"L'affaire du moment",
+"Je sors l'affaire !",
+"Je l'avais prédit...",
+"Enquête",
+"Et vous, qu'en pensez-vous ?",
+"Christophe Lambert donne son avis...",
+"Un psychologue nous en parle",
+"On en parle avec Katsuni",
+"On vous dit tout",
+"Nos infos exclusives",
+"David Cage s'exprime à ce sujet"
+);
+
+var n1 = [Math.floor ( Math.random() * p1.length )]; 
+var n2 = [Math.floor ( Math.random() * p2.length )]; 
+var n3 = [Math.floor ( Math.random() * p3.length )]; 
+var n4 = [Math.floor ( Math.random() * p4.length )]; 
+var n5 = [Math.floor ( Math.random() * p5.length )]; 
+
+document.write("<div id='container'><div id='radius'><div id='title'>" + p1[n1] + " " + p2[n2] + " " + p3[n3] + p4[n4] + "</div><div id='com'>" + p5[n5] + "</div><div id='author'><img src='JulienC.png' style='width: 41px; height: 41px; margin-right: 5px; float: left' alt='JulienC'></br><a href='javascript:document.location.reload();'>Clique ici pour générer une autre brève.</a></div></div><div id='tweet'><a href='https://twitter.com/Sheepeuh' class='twitter-follow-button' data-show-count='false' data-lang='fr'>Sur une idée originale de @Sheepeuh</a></div></div>"); 
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</body>
+</html>
